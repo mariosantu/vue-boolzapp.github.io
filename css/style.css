@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.background-container {
+    position: relative;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.background-top {
+    background-color: #009688;
+    height: 15vh;
+}
+.background-bot {
+    background-color: #D9DBD5;
+    height: 85vh;
+}
+
+.top-chat {
+    background-color: #EDEDED;
+    min-height: 70px;
+}
+
+.main-content {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+}
