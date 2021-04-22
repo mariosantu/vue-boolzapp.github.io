@@ -139,20 +139,10 @@
                 <!--user header-->
 
                 <!--main messages container-->
-                <!-- <div class="messages-area">
-                        <div v-for="contact in contacts" class="mymessage">
-                            <div v-for="(message, ind) in contact.messages" v-if="message.status == 'sent'">
-                                {{ message.text }}
-                            </div>
-
-                            <div v-else class="friendmessage"> {{ message.txt }} </div> 
-                        </div>
-
-                </div> -->
 
                 <div class="messages-area">
                     <div v-for="(contact, index) in contacts" class="mymessage" v-if="currentIndexAvatar == index">
-                        <div v-for="(message, ind) in contact.messages" v-if="message.status == 'sent'">
+                        <div v-for="(message, ind) in contact.messages" v-if="message.status == 'sent'" class="green-msg" >
                             {{ message.text }}
                         </div>
 

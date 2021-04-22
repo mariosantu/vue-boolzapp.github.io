@@ -16,7 +16,6 @@ img {
 }
 
 .background-container {
-    background: rgb(0,149,135);
     background: linear-gradient(180deg, rgba(0,149,135,1) 20%, rgba(213,218,216,1) 20%);
     height: 100vh;
 }
@@ -178,5 +177,20 @@ img {
 }
 
 .friendmessage {
-    padding: 50px;
+    padding: 20px;
+    text-align: left;
+    background-color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.green-msg {
+    padding: 30px;
+    background-color: #d5f9ba;
+    font-weight: bold;
+    border-radius: 10px;
+    width: 30%;
+    text-align: left;
+    margin: 5px;
 }
