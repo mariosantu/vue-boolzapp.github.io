@@ -3,6 +3,7 @@ var app = new Vue( {
 	el: '#root',
 
 	data: {
+		filterTextName: '',
 		contacts: [
 			{
 				name: 'Michele',

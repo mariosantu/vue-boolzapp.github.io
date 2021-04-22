@@ -16,8 +16,9 @@ img {
 }
 
 .background-container {
-  background-color:cadetblue;
-  height: 100vh;
+    background: rgb(0,149,135);
+    background: linear-gradient(180deg, rgba(0,149,135,1) 20%, rgba(213,218,216,1) 20%);
+    height: 100vh;
 }
 
 .main-container {
@@ -35,6 +36,7 @@ img {
 .left-col {
     height: 100%;
     width: 30%;
+    float: left;
 }
 
 .right-col {
@@ -108,8 +110,73 @@ img {
 .messages-area {
     height: 100%;
     width: 100%;
+    background-image: url(../img/mine.jpg);
 }
 
 .text-messages-input {
     height: 68px;
+    background-color: #f3eeea;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.messages {
+    overflow-y: scroll;
+    height: calc(100% - 200px);
+}
+
+.emoji,
+.vocal_icon {
+    font-size: 20px;
+    text-align: center;
+    color: #6a7477;
+    width: 100px;
+}
+
+.text-messages-input input {
+    height: 30px;
+    width: 100%;
+    border-radius: 6px;
+    outline: none;
+    border: none;
+}
+
+.filter {
+    background-color: #ffffff;
+    height: 50px;
+    padding: 15px 5px;
+}
+
+.filter button {
+    width: 50px;
+    padding-left: 20px;
+    border: none;
+    color: #b0b0b0;
+    background-color: #fff;
+    font-size: 14px;
+    text-align: center;
+    outline: none;
+}
+
+.filter input {
+    width: 80%;
+    border: none;
+    color: #b0b0b0;
+    background-color: #fff;
+    font-size: 14px;
+    text-align: center;
+    outline: none;
+}
+
+.filter .flex {
+    padding-left: 20px;
+}
+
+.mymessage {
+    text-align: right;
+    padding: 50px;
+}
+
+.friendmessage {
+    padding: 50px;
 }

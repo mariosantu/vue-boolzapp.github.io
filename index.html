@@ -13,10 +13,12 @@
 </head>
 <body>
     
+    <div id="root">
+
    <div class="background-container">
 
     <div class="main-container"> 
-        <div class="flex">
+
             <!--left col-->
             <div class="left-col">
             <!--user main-->
@@ -68,25 +70,28 @@
 
             <!--filter-->
             <div class="filter">
-                <div class="input-filter">
-                    <i class="fas fa-search"></i>
-                    <input type="text" placeholder="cerca o inizia una nuova chat">
+                <div class="flex">
+                    <button>
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input v-model="filterTextName" type="text" name="filter" id="filterbar" placeholder="Cerca o inizia una nuova chat"> 
+                    
                 </div>
             </div>
             <!--filter-->
 
             <!--messagges-->
             <div class="messages">
-                <div class="user">
+                <div class="user" v-for="(contact, index) in contacts">
                     <div class="flex">
                         <div>
-                         <img src="img/avatar_1.jpg" alt="io">
+                         <img :src="`img/avatar${contact.avatar}.jpg`" alt="io">
                         </div>
 
-                        <div>Michele</div>
+                        <div>{{ contact.name }}</div>
                     </div>
                 </div>
-
+               <!--
                 <div class="user">
                     <div class="flex">
                         <div>
@@ -116,28 +121,7 @@
                         <div>Luisa</div>
                     </div>
                 </div>
-
-                <!--test-->
-
-                <div class="user">
-                    <div class="flex">
-                        <div>
-                         <img src="img/avatar_4.jpg" alt="io">
-                        </div>
-
-                        <div>Luisa</div>
-                    </div>
-                </div>
-
-                <div class="user">
-                    <div class="flex">
-                        <div>
-                         <img src="img/avatar_4.jpg" alt="io">
-                        </div>
-
-                        <div>Luisa</div>
-                    </div>
-                </div>
+            -->
 
 
 
@@ -188,12 +172,27 @@
                 <!--user header-->
 
                 <!--main messages container-->
-                <div class="messages-area">ciao</div>
+                <div class="messages-area">
+                        <div class="mymessage">ciao</div>
+                        <div class="friendmessage">ciao</div>
+                </div>
                 <!--main messages container-->
 
 
                 <!--footer text messages container-->
-                <div class="text-messages-input">ciao</div>
+                <div class="text-messages-input flex">
+                    
+                        <div class="emoji">
+                            <i class="far fa-smile"></i>
+                        </div>
+
+                        <input type="text" name="message" id="msgInput" placeholder="Scrivi un messaggio">
+
+                        <div class="vocal_icon">
+                            <i class="fas fa-microphone"></i>
+                        </div>
+                    
+                </div>
                 <!--footer text messages container-->
 
 
@@ -201,13 +200,11 @@
 
             </div>
             <!--right col-->
-
-        </div>
     </div>
 
         
    </div>
-   
+   </div>
     
 
     
