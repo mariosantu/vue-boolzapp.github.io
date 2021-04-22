@@ -82,7 +82,7 @@
 
             <!--messagges-->
             <div class="messages">
-                <div class="user" v-for="(contact, index) in contacts">
+                <div class="user" v-for="(contact, index) in contacts" @click="selectUser(index)">
                     <div class="flex">
                         <div>
                          <img :src="`img/avatar${contact.avatar}.jpg`" alt="io">
@@ -91,39 +91,6 @@
                         <div>{{ contact.name }}</div>
                     </div>
                 </div>
-               <!--
-                <div class="user">
-                    <div class="flex">
-                        <div>
-                         <img src="img/avatar_2.jpg" alt="io">
-                        </div>
-
-                        <div>Fabio</div>
-                    </div>
-                </div>
-
-                <div class="user">
-                    <div class="flex">
-                        <div>
-                         <img src="img/avatar_3.jpg" alt="io">
-                        </div>
-
-                        <div>Samuele</div>
-                    </div>
-                </div>
-
-                <div class="user">
-                    <div class="flex">
-                        <div>
-                         <img src="img/avatar_4.jpg" alt="io">
-                        </div>
-
-                        <div>Luisa</div>
-                    </div>
-                </div>
-            -->
-
-
 
             </div>
             <!--messagges-->
@@ -142,10 +109,10 @@
                     <div class="user-img">
                         <div class="flex">
                             <div>
-                             <img src="img/avatar_1.jpg" alt="io">
+                             <img :src="`img/avatar${selectedAvatar}.jpg`" alt="io">
                             </div>
  
-                            <div class="user_name">Nome Utente <br>
+                            <div class="user_name"> {{ selectedName }} <br>
                             <span>Ultimo accesso oggi alle</span>
                         </div>
                         </div>
@@ -172,10 +139,27 @@
                 <!--user header-->
 
                 <!--main messages container-->
+                <!-- <div class="messages-area">
+                        <div v-for="contact in contacts" class="mymessage">
+                            <div v-for="(message, ind) in contact.messages" v-if="message.status == 'sent'">
+                                {{ message.text }}
+                            </div>
+
+                            <div v-else class="friendmessage"> {{ message.txt }} </div> 
+                        </div>
+
+                </div> -->
+
                 <div class="messages-area">
-                        <div class="mymessage">ciao</div>
-                        <div class="friendmessage">ciao</div>
-                </div>
+                    <div v-for="(contact, index) in contacts" class="mymessage" v-if="currentIndexAvatar == index">
+                        <div v-for="(message, ind) in contact.messages" v-if="message.status == 'sent'">
+                            {{ message.text }}
+                        </div>
+
+                        <div v-else class="friendmessage"> {{ message.text }} </div> 
+                    </div>
+
+            </div>
                 <!--main messages container-->
 
 
