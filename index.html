@@ -4,35 +4,208 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title>Document</title>
 </head>
 <body>
     
    <div class="background-container">
-        <!--background-->
-        <div class="background">
-            <div class="background-top"></div>
-            <div class="background-bot"></div>
-        </div>
-        <!--background-->
-        <div class="container main-content">
 
-        <!--top-->
+    <div class="main-container"> 
+        <div class="flex">
+            <!--left col-->
+            <div class="left-col">
+            <!--user main-->
+               <div class="user-main-container flex">
+                   <div class="user-img">
+                       <div class="flex">
+                           <div>
+                            <img src="img/avatar_io.jpg" alt="io">
+                           </div>
 
-            <div class="row top-chat">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-8"></div>
+                           <div>Nome Utente</div>
+                       </div>
+                   </div>
+
+                   <div>
+                     <div class="utilities flex">
+
+                        <div class="icon">
+                            <i class="fas fa-circle-notch"></i>
+                        </div>
+
+                        <div class="icon">
+                            <i class="fas fa-comment-alt"></i>
+                        </div>
+
+                        <div class="icon">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+
+                     </div>
+                   </div>
+                   
+               </div>
+            <!--user main-->
+
+            <!--notification-->
+              <div class="notifications">
+                  <div class="flex">
+                      <div class="bell-icon">
+                        <i class="fas fa-bell-slash"></i>
+                      </div>
+                      <div>
+                         <div>Ricevi notifiche di nuovi messaggi</div>
+                         <div><a href="#">Attiva notifiche desktop</a></div>
+                      </div>
+                  </div>
+              </div>
+            <!--notification-->
+
+            <!--filter-->
+            <div class="filter">
+                <div class="input-filter">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="cerca o inizia una nuova chat">
+                </div>
             </div>
+            <!--filter-->
 
-            <div class="row">
-                <div class="col-sm-4">ciao</div>
-                <div class="col-sm-8">ciao</div>
+            <!--messagges-->
+            <div class="messages">
+                <div class="user">
+                    <div class="flex">
+                        <div>
+                         <img src="img/avatar_1.jpg" alt="io">
+                        </div>
+
+                        <div>Michele</div>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <div class="flex">
+                        <div>
+                         <img src="img/avatar_2.jpg" alt="io">
+                        </div>
+
+                        <div>Fabio</div>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <div class="flex">
+                        <div>
+                         <img src="img/avatar_3.jpg" alt="io">
+                        </div>
+
+                        <div>Samuele</div>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <div class="flex">
+                        <div>
+                         <img src="img/avatar_4.jpg" alt="io">
+                        </div>
+
+                        <div>Luisa</div>
+                    </div>
+                </div>
+
+                <!--test-->
+
+                <div class="user">
+                    <div class="flex">
+                        <div>
+                         <img src="img/avatar_4.jpg" alt="io">
+                        </div>
+
+                        <div>Luisa</div>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <div class="flex">
+                        <div>
+                         <img src="img/avatar_4.jpg" alt="io">
+                        </div>
+
+                        <div>Luisa</div>
+                    </div>
+                </div>
+
+
+
             </div>
+            <!--messagges-->
+
+
+
+
+            </div>
+            <!--left col-->
+
+            <!--right col-->
+            <div class="right-col">
+
+                <!--user header-->
+                <div class="user-top-container-dx flex">
+                    <div class="user-img">
+                        <div class="flex">
+                            <div>
+                             <img src="img/avatar_1.jpg" alt="io">
+                            </div>
+ 
+                            <div class="user_name">Nome Utente <br>
+                            <span>Ultimo accesso oggi alle</span>
+                        </div>
+                        </div>
+                    </div>
+ 
+                    <div>
+                      <div class="utilities flex">
+ 
+                         <div class="icon">
+                            <i class="fas fa-search"></i>
+                         </div>
+ 
+                         <div class="icon">
+                            <i class="fas fa-share-square"></i>
+                         </div>
+ 
+                         <div class="icon">
+                            <i class="fas fa-ellipsis-v"></i>
+                         </div>
+ 
+                      </div>
+                    </div>   
+                </div>
+                <!--user header-->
+
+                <!--main messages container-->
+                <div class="messages-area">ciao</div>
+                <!--main messages container-->
+
+
+                <!--footer text messages container-->
+                <div class="text-messages-input">ciao</div>
+                <!--footer text messages container-->
+
+
+
+
+            </div>
+            <!--right col-->
+
         </div>
+    </div>
+
+        
    </div>
    
     
