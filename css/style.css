@@ -18,14 +18,19 @@ img {
 .background-container {
     background: linear-gradient(180deg, rgba(0,149,135,1) 20%, rgba(213,218,216,1) 20%);
     height: 100vh;
+    position: relative;
 }
 
 .main-container {
+    min-width: 1200px;
     height: 80%;
     width: 80%;
     margin: auto;
     background-color: white;
-    transform: translate(10px, 50px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50% , -50% );
 }
 
 .flex {
@@ -52,19 +57,21 @@ img {
     align-items: center;
     border-right: 1px solid lightgrey;
     background-color: #eaeaea;
+    height: 70px;
 }
 
 .user-img {
     display: inline-block;
+    padding-left: 12px;
 }
 
 .user-img .flex {
     align-items: center;
 }
 
-img {
+.user-img img {
     border-radius: 50%;
-    height: 68px;
+    height: 54px;
     width: auto;
 }
 
@@ -76,6 +83,7 @@ img {
 }
 
 .notifications {
+    height: 70px;
     padding: 20px;
     background-color: lightskyblue;
 }
@@ -102,13 +110,20 @@ img {
     cursor: pointer;
 }
 
-.user-top-container-dx {
+.user img {
+    border-radius: 50%;
     height: 68px;
+    width: auto;
+}
+
+.user-top-container-dx {
+    height: 83px;
 }
 
 .messages-area {
     height: 100%;
     width: 100%;
+    overflow: auto;
     background-image: url(../img/mine.jpg);
 }
 
@@ -120,8 +135,8 @@ img {
 }
 
 .messages {
-    overflow-y: scroll;
-    height: calc(100% - 200px);
+    overflow-y: auto;
+    height: calc(100% - 190px);
 }
 
 .emoji,
@@ -146,7 +161,7 @@ img {
     padding: 15px 5px;
 }
 
-.filter button {
+.filter label {
     width: 50px;
     padding-left: 20px;
     border: none;
@@ -183,6 +198,8 @@ img {
     font-weight: bold;
     border-radius: 10px;
     width: 30%;
+    float: left;
+    clear: both;
 }
 
 .green-msg {
@@ -190,7 +207,14 @@ img {
     background-color: #d5f9ba;
     font-weight: bold;
     border-radius: 10px;
-    width: 30%;
+    min-width: 300px;
+    max-width: 400px;
     text-align: left;
     margin: 5px;
+    float: right;
+    clear: both;
+}
+
+.messages .user.active {
+    background-color: lightgray;
 }

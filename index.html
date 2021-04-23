@@ -71,9 +71,7 @@
             <!--filter-->
             <div class="filter">
                 <div class="flex">
-                    <button>
-                        <i class="fas fa-search"></i>
-                    </button>
+                    <label for="filtr"><i class="fas fa-search"></i></label>
                     <input v-model="filterTextName" type="text" name="filter" id="filterbar" placeholder="Cerca o inizia una nuova chat"> 
                     
                 </div>
@@ -82,7 +80,7 @@
 
             <!--messagges-->
             <div class="messages">
-                <div class="user" v-for="(contact, index) in contacts" @click="selectUser(index)">
+                <div class="user" v-for="(contact, index) in contacts" @click="selectUser(index)" :class="{ 'active' : index == currentIndexAvatar}">
                     <div class="flex">
                         <div>
                          <img :src="`img/avatar${contact.avatar}.jpg`" alt="io">
