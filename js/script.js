@@ -93,9 +93,11 @@ var app = new Vue( {
 		]		
 	},
 	methods : {
+		// viene richiamata per selezionare l'utente
 		selectUser(index) {
 			this.currentIndexAvatar = index;
 		},
+		// viene richiamata per filtrare gli utenti in base al contenuto immesso nell'imput
 		userFilter() {
 			this.contacts.forEach((element) =>{
 				
@@ -107,16 +109,36 @@ var app = new Vue( {
 				console.log(element.name + ' ' + element.visible);
 			});
 		},
+		// viene richiamata per inviare un nuovo messaggio in chat
 		sendMessage() {
 			
 			if( this.newMessage.length > 0 ) {
+			   
+				const myData = new Date();
+
 				let msg = {};
-				msg.date = '10/01/2020 15:50:00';
+				msg.date = dayjs(myData).format('DD/MM/YYYY HH:mm:ss');
 				msg.text = this.newMessage;
 				msg.status = 'sent';
 				this.contacts[this.currentIndexAvatar].messages.push(msg);
-				console.log(msg.text);
+				this.userAnswer();
+				this.newMessage = '';
 			} 
+		},
+		// viene richiamata insieme a recivedMessage per simulare una risposta utente
+		userAnswer() {
+			setTimeout(() => {this.recivedMessage('ok');} ,1000);
+		},
+		recivedMessage(text) {
+			const myData = new Date();
+			
+			if( text.length > 0 ) {
+				let msg = {};
+				msg.date = dayjs(myData).format('DD/MM/YYYY HH:mm:ss');
+				msg.text = text;
+				msg.status = 'received';
+				this.contacts[this.currentIndexAvatar].messages.push(msg);
+			}
 		}
 	}
 })
