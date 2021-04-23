@@ -3,6 +3,7 @@ var app = new Vue( {
 	el: '#root',
 
 	data: {
+		newMessage: '',
 		filterTextName: '',
 		currentIndexAvatar: 0, 
 		contacts: [
@@ -105,6 +106,17 @@ var app = new Vue( {
 				}
 				console.log(element.name + ' ' + element.visible);
 			});
+		},
+		sendMessage() {
+			
+			if( this.newMessage.length > 0 ) {
+				let msg = {};
+				msg.date = '10/01/2020 15:50:00';
+				msg.text = this.newMessage;
+				msg.status = 'sent';
+				this.contacts[this.currentIndexAvatar].messages.push(msg);
+				console.log(msg.text);
+			} 
 		}
 	}
 })
