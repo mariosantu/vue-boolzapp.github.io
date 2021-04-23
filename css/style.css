@@ -1,9 +1,13 @@
+/* RESET */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
+
+/* COMMON */
 
 img {
     width: 100%;
@@ -14,6 +18,33 @@ img {
     color: grey;
     padding-left: 10px;
 }
+
+.flex {
+    display: flex;
+}
+
+.date{
+    font-size: small;
+    color: gray;
+    text-align: end;
+    position: relative;
+    top: 14px;
+    left: 13px;
+}
+
+.visible {
+    display: block;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+
+
+/* COMMON */
+
+/* STRUCTURE */
 
 .background-container {
     background: linear-gradient(180deg, rgba(0,149,135,1) 20%, rgba(213,218,216,1) 20%);
@@ -33,9 +64,7 @@ img {
     transform: translate( -50% , -50% );
 }
 
-.flex {
-    display: flex;
-}
+
 
 .left-col {
     height: 100%;
@@ -50,6 +79,9 @@ img {
     flex-direction: column;
     justify-content: space-between;
 }
+/* STRUCTURE */
+
+/* MAIN */
 
 .user-main-container,
 .user-top-container-dx {
@@ -75,6 +107,11 @@ img {
     width: auto;
 }
 
+.user-img span {
+    color: grey;
+    font-size: 13px;
+}
+
 .utilities .icon {
     font-size: 20px;
     color: grey;
@@ -88,10 +125,25 @@ img {
     background-color: lightskyblue;
 }
 
+.notifications a {
+    color: grey;
+    font-size: 13px;
+}
+
 .bell-icon {
-    font-size: xx-large;
+    font-size: 20px;
     color: white;
     margin-right: 5px;
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: white;
+    text-align: center;;
+}
+
+.bell-icon i {
+    line-height: 45px;
+    color: lightskyblue;
 }
 
 .input-filter {
@@ -221,15 +273,6 @@ img {
     background-color: lightgray;
 }
 
-.date{
-    font-size: small;
-    color: gray;
-    text-align: end;
-    position: relative;
-    top: 14px;
-    left: 13px;
-}
+/* MAIN */
 
-.visible {
-    display: block;
-}
+

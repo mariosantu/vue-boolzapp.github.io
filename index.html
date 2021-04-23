@@ -29,7 +29,7 @@
                             <img src="img/avatar_io.jpg" alt="io">
                            </div>
 
-                           <div>Nome Utente</div>
+                           <div class="bold">Nome Utente</div>
                        </div>
                    </div>
 
@@ -49,53 +49,47 @@
                         </div>
 
                      </div>
-                   </div>
-                   
+                   </div>   
                </div>
-            <!--user main-->
+             <!--user main-->
 
-            <!--notification-->
+             <!--notification-->
               <div class="notifications">
                   <div class="flex">
                       <div class="bell-icon">
                         <i class="fas fa-bell-slash"></i>
                       </div>
                       <div>
-                         <div>Ricevi notifiche di nuovi messaggi</div>
+                         <div class="bold">Ricevi notifiche di nuovi messaggi</div>
                          <div><a href="#">Attiva notifiche desktop</a></div>
                       </div>
                   </div>
               </div>
-            <!--notification-->
+             <!--notification-->
 
-            <!--filter-->
-            <div class="filter">
+             <!--filter-->
+             <div class="filter">
                 <div class="flex">
                     <label for="filtr"><i class="fas fa-search"></i></label>
                     <input v-model="filterTextName" @keyup="userFilter" type="text" name="filter" id="filterbar" placeholder="Cerca o inizia una nuova chat"> 
-                    
                 </div>
-            </div>
-            <!--filter-->
+             </div>
+             <!--filter-->
 
-            <!--messagges-->
-            <div class="messages">
-                <div class="user" v-for="(contact, index) in contacts" @click="selectUser(index)"  :class="{ 'active' : index == currentIndexAvatar}" v-if="contact.visible">
-                    <div class="flex">
-                        <div>
-                         <img :src="`img/avatar${contact.avatar}.jpg`" alt="io">
+             <!--messagges-->
+                <div class="messages">
+                    <div class="user" v-for="(contact, index) in contacts" @click="selectUser(index)"  :class="{ 'active' : index == currentIndexAvatar}" v-if="contact.visible">
+                        <div class="flex">
+                            <div>
+                            <img :src="`img/avatar${contact.avatar}.jpg`" alt="io">
+                            </div>
+
+                            <div class="bold txt">{{ contact.name }}</div>
                         </div>
-
-                        <div>{{ contact.name }}</div>
                     </div>
+
                 </div>
-
-            </div>
-            <!--messagges-->
-
-
-
-
+             <!--messagges-->
             </div>
             <!--left col-->
 
@@ -110,7 +104,7 @@
                              <img :src="`img/avatar${contacts[currentIndexAvatar].avatar}.jpg`" :alt="contacts[currentIndexAvatar].name"> 
                             </div>
  
-                            <div class="user_name"> {{ contacts[currentIndexAvatar].name }} <br>
+                            <div class="user_name bold"> {{ contacts[currentIndexAvatar].name }} <br>
                             <span>Ultimo accesso oggi alle</span>
                         </div>
                         </div>
@@ -171,10 +165,6 @@
                     
                 </div>
                 <!--footer text messages container-->
-
-
-
-
             </div>
             <!--right col-->
     </div>
