@@ -4,9 +4,7 @@ var app = new Vue( {
 
 	data: {
 		filterTextName: '',
-		selectedAvatar: '_1',
-		selectedName: 'Michele',
-		currentIndexAvatar: 0,
+		currentIndexAvatar: 0, 
 		contacts: [
 			{
 				name: 'Michele',
@@ -95,9 +93,18 @@ var app = new Vue( {
 	},
 	methods : {
 		selectUser(index) {
-			this.selectedAvatar = this.contacts[index].avatar;
-			this.selectedName = this.contacts[index].name;
 			this.currentIndexAvatar = index;
+		},
+		userFilter() {
+			this.contacts.forEach((element) =>{
+				
+				if( element.name.toLowerCase().includes(this.filterTextName.toLowerCase())) {
+					element.visible = true;
+				} else {
+					element.visible = false;
+				}
+				console.log(element.name + ' ' + element.visible);
+			});
 		}
 	}
 })

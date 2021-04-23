@@ -192,6 +192,8 @@ img {
 }
 
 .friendmessage {
+    min-width: 300px;
+    max-width: 400px;
     padding: 20px;
     text-align: left;
     background-color: white;
@@ -217,4 +219,17 @@ img {
 
 .messages .user.active {
     background-color: lightgray;
+}
+
+.date{
+    font-size: small;
+    color: gray;
+    text-align: end;
+    position: relative;
+    top: 14px;
+    left: 13px;
+}
+
+.visible {
+    display: block;
 }

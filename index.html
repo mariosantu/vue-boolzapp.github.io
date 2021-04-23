@@ -72,7 +72,7 @@
             <div class="filter">
                 <div class="flex">
                     <label for="filtr"><i class="fas fa-search"></i></label>
-                    <input v-model="filterTextName" type="text" name="filter" id="filterbar" placeholder="Cerca o inizia una nuova chat"> 
+                    <input v-model="filterTextName" @keyup="userFilter" type="text" name="filter" id="filterbar" placeholder="Cerca o inizia una nuova chat"> 
                     
                 </div>
             </div>
@@ -80,7 +80,7 @@
 
             <!--messagges-->
             <div class="messages">
-                <div class="user" v-for="(contact, index) in contacts" @click="selectUser(index)" :class="{ 'active' : index == currentIndexAvatar}">
+                <div class="user" v-for="(contact, index) in contacts" @click="selectUser(index)"  :class="{ 'active' : index == currentIndexAvatar}" v-if="contact.visible">
                     <div class="flex">
                         <div>
                          <img :src="`img/avatar${contact.avatar}.jpg`" alt="io">
@@ -107,10 +107,10 @@
                     <div class="user-img">
                         <div class="flex">
                             <div>
-                             <img :src="`img/avatar${selectedAvatar}.jpg`" alt="io">
+                             <img :src="`img/avatar${contacts[currentIndexAvatar].avatar}.jpg`" :alt="contacts[currentIndexAvatar].name"> 
                             </div>
  
-                            <div class="user_name"> {{ selectedName }} <br>
+                            <div class="user_name"> {{ contacts[currentIndexAvatar].name }} <br>
                             <span>Ultimo accesso oggi alle</span>
                         </div>
                         </div>
@@ -139,12 +139,17 @@
                 <!--main messages container-->
 
                 <div class="messages-area">
-                    <div v-for="(contact, index) in contacts" class="mymessage" v-if="currentIndexAvatar == index">
-                        <div v-for="(message, ind) in contact.messages" v-if="message.status == 'sent'" class="green-msg" >
+                    <div v-for="(message, index) in contacts[currentIndexAvatar].messages" class="mymessage">
+                        
+                        <div v-if="message.status == 'sent'" class="green-msg">
                             {{ message.text }}
+                            <div class="date">{{ message.date }}</div>
                         </div>
 
-                        <div v-else class="friendmessage"> {{ message.text }} </div> 
+                        <div v-else class="friendmessage"> 
+                            {{ message.text }} 
+                            <div class="date">{{ message.date }}</div>
+                        </div> 
                     </div>
 
             </div>
