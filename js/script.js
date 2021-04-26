@@ -113,11 +113,9 @@ var app = new Vue( {
 		sendMessage() {
 			
 			if( this.newMessage.length > 0 ) {
-			   
-				const myData = new Date();
 
 				let msg = {};
-				msg.date = dayjs(myData).format('DD/MM/YYYY HH:mm:ss');
+				msg.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
 				msg.text = this.newMessage;
 				msg.status = 'sent';
 				this.contacts[this.currentIndexAvatar].messages.push(msg);
@@ -130,11 +128,10 @@ var app = new Vue( {
 			setTimeout(() => {this.recivedMessage('ok');} ,1000);
 		},
 		recivedMessage(text) {
-			const myData = new Date();
 			
 			if( text.length > 0 ) {
 				let msg = {};
-				msg.date = dayjs(myData).format('DD/MM/YYYY HH:mm:ss');
+				msg.date = dayjs().format('DD/MM/YYYY HH:mm:ss');
 				msg.text = text;
 				msg.status = 'received';
 				this.contacts[this.currentIndexAvatar].messages.push(msg);
