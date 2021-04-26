@@ -151,15 +151,15 @@ var app = new Vue( {
 			this.contacts[this.currentIndexAvatar].messages.splice(index, 1);
 			this.activeMessage = false;
 		},
-		getActiveContactLastMessage() {
-			const activeContactMessages = this.contacts[this.currentIndexAvatar].messages;
+		getContactLastMessageDate(index) {
+			const activeContactMessages = this.contacts[index].messages;
 
 			return activeContactMessages[activeContactMessages.length -1].date;
 		},
 		getLastMessage(contactIndex) {
 
 			let textToPrint;
-			
+
 			if(this.contacts[contactIndex].messages.length > 0) {
 
 				const contactMessages = this.contacts[contactIndex].messages;

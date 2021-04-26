@@ -68,7 +68,7 @@ img {
 
 .left-col {
     height: 100%;
-    width: 30%;
+    max-width: 30%;
     float: left;
 }
 
@@ -308,6 +308,11 @@ img {
     padding: 10px;
     font-size: small;
     cursor: pointer;
+}
+
+.lastdate {
+    font-size: small;
+    padding-top: 7px;
 }
 /* MAIN */
 
