@@ -152,6 +152,22 @@ var app = new Vue( {
 		deleteMessage(index) {
 			this.contacts[this.currentIndexAvatar].messages.splice(index, 1);
 			this.activeMessage = false;
+		},
+		getActiveContactLastMessage() {
+			const activeContactMessages = this.contacts[this.currentIndexAvatar].messages;
+
+			return activeContactMessages[activeContactMessages.length -1].date;
+		},
+		getLastMessage(contactIndex) {
+			const contactMessages = this.contacts[contactIndex].messages;
+            const contactLastMessages = contactMessages[contactMessages.length - 1].text;
+            let textToPrint = contactLastMessages.slice(0, 30);
+
+			if( textToPrint.length >= 30 ) {
+				textToPrint += '...';
+			}
+			
+			return textToPrint;
 		}
 	}
 })

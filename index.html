@@ -84,7 +84,11 @@
                             <img :src="`img/avatar${contact.avatar}.jpg`" alt="io">
                             </div>
 
-                            <div class="bold txt">{{ contact.name }}</div>
+                            <div class="bold txt">
+                                {{ contact.name }}
+
+                                <div> {{ getLastMessage(index) }} </div>
+                            </div>
                         </div>
                     </div>
 
@@ -105,7 +109,8 @@
                             </div>
  
                             <div class="user_name bold"> {{ contacts[currentIndexAvatar].name }} <br>
-                            <span>Ultimo accesso oggi alle </span>
+                            <span v-if="contacts[currentIndexAvatar].messages.length > 0">Ultimo accesso oggi alle {{ getActiveContactLastMessage() }}</span>
+                            <span v-else>Online</span>
                         </div>
                         </div>
                     </div>
