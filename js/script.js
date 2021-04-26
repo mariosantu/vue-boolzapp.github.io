@@ -146,8 +146,6 @@ var app = new Vue( {
 			} else {
 				this.activeMessage = index;
 			}
-			  
-
 		},
 		deleteMessage(index) {
 			this.contacts[this.currentIndexAvatar].messages.splice(index, 1);
@@ -159,13 +157,22 @@ var app = new Vue( {
 			return activeContactMessages[activeContactMessages.length -1].date;
 		},
 		getLastMessage(contactIndex) {
-			const contactMessages = this.contacts[contactIndex].messages;
-            const contactLastMessages = contactMessages[contactMessages.length - 1].text;
-            let textToPrint = contactLastMessages.slice(0, 30);
 
-			if( textToPrint.length >= 30 ) {
-				textToPrint += '...';
+			let textToPrint;
+			
+			if(this.contacts[contactIndex].messages.length > 0) {
+
+				const contactMessages = this.contacts[contactIndex].messages;
+				const contactLastMessages = contactMessages[contactMessages.length - 1].text;
+				textToPrint = contactLastMessages.slice(0, 30);
+	
+				if( textToPrint.length >= 30 ) {
+					textToPrint += '...';
+				}
+			} else {
+				textToPrint = 'nessun messaggio inviato';
 			}
+			
 			
 			return textToPrint;
 		}
