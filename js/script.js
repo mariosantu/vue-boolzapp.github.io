@@ -6,6 +6,7 @@ var app = new Vue( {
 		newMessage: '',
 		filterTextName: '',
 		currentIndexAvatar: 0, 
+		activeMessage: false,
 		contacts: [
 			{
 				name: 'Michele',
@@ -96,6 +97,7 @@ var app = new Vue( {
 		// viene richiamata per selezionare l'utente
 		selectUser(index) {
 			this.currentIndexAvatar = index;
+			this.activeMessage = false;
 		},
 		// viene richiamata per filtrare gli utenti in base al contenuto immesso nell'imput
 		userFilter() {
@@ -136,6 +138,20 @@ var app = new Vue( {
 				msg.status = 'received';
 				this.contacts[this.currentIndexAvatar].messages.push(msg);
 			}
+		},
+		menuDropdown(index) {
+
+			if ( this.activeMessage === index ) {
+				this.activeMessage = false;
+			} else {
+				this.activeMessage = index;
+			}
+			  
+
+		},
+		deleteMessage(index) {
+			this.contacts[this.currentIndexAvatar].messages.splice(index, 1);
+			this.activeMessage = false;
 		}
 	}
 })

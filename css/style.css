@@ -179,6 +179,15 @@ img {
     background-image: url(../img/mine.jpg);
 }
 
+.chevron {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    display: none;
+    color: grey;
+}
+
 .text-messages-input {
     height: 68px;
     background-color: #f3eeea;
@@ -254,6 +263,7 @@ img {
     width: 30%;
     float: left;
     clear: both;
+    position: relative;
 }
 
 .green-msg {
@@ -267,12 +277,38 @@ img {
     margin: 5px;
     float: right;
     clear: both;
+    position: relative;
+}
+
+.green-msg:hover .chevron,
+.friendmessage:hover .chevron {
+    display: block;
 }
 
 .messages .user.active {
     background-color: lightgray;
 }
 
+.delete-menu {
+    position: absolute;
+    top: 35%;
+    right: 0;
+    background-color: white;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.delete-menu ul {
+    list-style-type: none;
+    border: 1px solid lightgrey;
+    border-radius: 10px
+}
+
+.delete-menu ul li {
+    padding: 10px;
+    font-size: small;
+    cursor: pointer;
+}
 /* MAIN */
 
 

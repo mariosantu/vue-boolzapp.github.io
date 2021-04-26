@@ -105,7 +105,7 @@
                             </div>
  
                             <div class="user_name bold"> {{ contacts[currentIndexAvatar].name }} <br>
-                            <span>Ultimo accesso oggi alle</span>
+                            <span>Ultimo accesso oggi alle </span>
                         </div>
                         </div>
                     </div>
@@ -134,15 +134,38 @@
 
                 <div class="messages-area">
                     <div v-for="(message, index) in contacts[currentIndexAvatar].messages" class="mymessage">
-                        
+
                         <div v-if="message.status == 'sent'" class="green-msg">
                             {{ message.text }}
+                            
                             <div class="date">{{ message.date }}</div>
+
+                            <div class="chevron" @click="menuDropdown(index)">
+                                <i class="fas fa-chevron-down"></i>
+                            </div> 
+
+                            <div v-if="index === activeMessage" class="delete-menu">
+                                <ul>
+                                    <li>Info Messaggio</li>
+                                    <li @click="deleteMessage(index)">Cancella Messagio</li>
+                                </ul>
+                            </div>
                         </div>
 
                         <div v-else class="friendmessage"> 
                             {{ message.text }} 
                             <div class="date">{{ message.date }}</div>
+
+                            <div class="chevron" @click="menuDropdown(index)">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+
+                            <div v-if="index === activeMessage" class="delete-menu">
+                                <ul>
+                                    <li>Info Messaggio</li>
+                                    <li @click="deleteMessage(index)">Cancella Messagio</li>
+                                </ul>
+                            </div>
                         </div> 
                     </div>
 
