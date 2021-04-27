@@ -81,7 +81,7 @@
                     <div class="user" v-for="(contact, index) in contacts" @click="selectUser(index)"  :class="{ 'active' : index == currentIndexAvatar}" v-if="contact.visible">
                         <div class="flex">
                             <div>
-                            <img :src="`img/avatar${contact.avatar}.jpg`" alt="io">
+                              <img :src="`img/avatar${contact.avatar}.jpg`" alt="io">
                             </div>
 
                             <div class="bold txt contactname">

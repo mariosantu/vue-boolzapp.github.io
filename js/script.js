@@ -154,7 +154,11 @@ var app = new Vue( {
 		getContactLastMessageDate(index) {
 			const activeContactMessages = this.contacts[index].messages;
 
-			return activeContactMessages[activeContactMessages.length -1].date;
+			if(activeContactMessages.length > 0 ) {
+				return activeContactMessages[activeContactMessages.length -1].date;
+			} else {
+				return '';
+			}
 		},
 		getLastMessage(contactIndex) {
 
